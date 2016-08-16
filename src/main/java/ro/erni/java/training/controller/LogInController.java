@@ -29,11 +29,15 @@ public class LogInController {
 	 * after the fxml file has been loaded.
 	 */
 	@FXML
-	private void initialize() {
+	public void initialize() {
 		this.ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		this.dao = (EmployeeDao) ctx.getBean("edao");
 		// signInButton.defaultButtonProperty().bind(signInButton.focusedProperty());
 		// make sign in button work on every enter
+	}
+
+	public boolean isValidUser(String username, String password) {
+		return dao.getEmployeeUsernamePassword(username, password);
 	}
 
 	/**
@@ -41,11 +45,7 @@ public class LogInController {
 	 */
 	@FXML
 	private void handleSignIn(ActionEvent event) {
-		String username = usernameField.getText();
-		String password = passwordField.getText();
-
-		boolean isValidUser = dao.getEmployeeUsernamePassword(username, password);
-		if (isValidUser) {
+		if (isValidUser(usernameField.getText(), passwordField.getText())) {
 			MainApp.showInbox();
 		} else {
 			// Show the error message.
