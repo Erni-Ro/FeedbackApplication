@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.erni.java.training.controller.WriteFeedbackController">
    <children>
       <Text layoutX="96.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Write Feedback:" wrappingWidth="264.13671875">
          <font>
@@ -19,9 +19,9 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextArea layoutX="111.0" layoutY="105.0" prefHeight="57.0" prefWidth="442.0" text="..." />
-      <TextArea layoutX="111.0" layoutY="192.0" prefHeight="57.0" prefWidth="442.0" text="..." />
-      <TextArea layoutX="111.0" layoutY="284.0" prefHeight="57.0" prefWidth="442.0" text="..." />
+      <TextArea fx:id="a1" layoutX="111.0" layoutY="105.0" prefHeight="57.0" prefWidth="442.0" text="..." />
+      <TextArea fx:id="a2" layoutX="111.0" layoutY="192.0" prefHeight="57.0" prefWidth="442.0" text="..." />
+      <TextArea fx:id="a3" layoutX="111.0" layoutY="284.0" prefHeight="57.0" prefWidth="442.0" text="..." />
       <Text layoutX="122.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My colleague is also good at:" wrappingWidth="248.13671875">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -32,12 +32,12 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <CheckBox layoutX="111.0" layoutY="356.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="156.0" text="Send as anonymous" textFill="#089bda">
+      <CheckBox fx:id="anonymous" layoutX="111.0" layoutY="356.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="156.0" text="Send as anonymous" textFill="#089bda">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </CheckBox>
-      <Button layoutX="455.0" layoutY="352.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Send">
+      <Button fx:id="send" layoutX="455.0" layoutY="352.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0" text="Send">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
