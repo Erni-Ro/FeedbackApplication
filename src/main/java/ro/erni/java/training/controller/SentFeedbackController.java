@@ -9,18 +9,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import ro.erni.java.training.app.MainApp;
 import ro.erni.java.training.dao.EmployeeDao;
-public class InboxController{
 
+public class SentFeedbackController {
 	@FXML
 	private Label loggedAs;
 	@FXML
 	private Button searchEmployeeButton;
 	@FXML
-	private Button sentFeedbackButton;
+	private Button inboxButton;
 	@FXML
 	private Button signOutButton;
-	@FXML
-	private Button printButton;
 	@FXML
 	private Button deleteButton;
 
@@ -35,8 +33,8 @@ public class InboxController{
 	}
 	
 	@FXML
-	private void goToSentFeedback(ActionEvent event){
-		MainApp.showSentFeedback();
+	private void goToInbox(ActionEvent event){
+		MainApp.showInbox();
 	}
 	
 	@FXML
@@ -49,3 +47,6 @@ public class InboxController{
 		MainApp.showLogIn();
 	}
 }
+	
+
+

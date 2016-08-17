@@ -23,7 +23,9 @@ public class MainApp extends Application {
 		this.primaryStage.setTitle("FeedbackApp");
 
 		initRootLayout();
-		showEmployeeHomePage();
+		showLogIn();
+		
+		
 	}
 
 	/**
@@ -50,7 +52,7 @@ public class MainApp extends Application {
 	/**
 	 * Shows the person overview inside the root layout.
 	 */
-	public void showEmployeeHomePage() {
+	public static void showLogIn() {
 		try {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
@@ -67,6 +69,22 @@ public class MainApp extends Application {
 		}
 	}
 
+	public static void showWriteFeedback() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			String pathToFxml = "src/main/java/ro/erni/java/training/view/WriteFeedback.fxml";
+			URL fxmlUrl = new File(pathToFxml).toURI().toURL();
+			loader.setLocation(fxmlUrl);
+			AnchorPane homePage = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(homePage);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public static void showSearchEmployee() {
 		try {
 			// Load person overview.
