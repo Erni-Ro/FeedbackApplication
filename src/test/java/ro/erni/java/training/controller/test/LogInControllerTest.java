@@ -8,15 +8,15 @@ import ro.erni.java.training.controller.LogInController;
 public class LogInControllerTest {
 	LogInController log;
 
-//	@Before
-//	public void initialize() {
-//		this.log = new LogInController();
-//		log.initialize();
-//	}
-//
-//	@Test
-//	public void testLogInControllerUsernameAndPasswordMatch() {
-//		assertEquals(true, log.isValidUser("admin", "admin"));
-//	}
+	@Before
+	public void initialize() {
+		this.log = new LogInController();
+		log.initialize();
+	}
+
+	@Test
+	public void testLogInControllerUsernameAndPasswordMatch() {
+		assertEquals(true, log.isValidUser("admin", "admin"));
+	}
 
 }
