@@ -6,23 +6,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import ro.erni.java.training.app.MainApp;
 import ro.erni.java.training.dao.EmployeeDao;
-public class InboxController{
 
+public class WriteFeedbackController {
+	
+	
 	@FXML
-	private Label loggedAs;
+	private Button sendButton;
 	@FXML
-	private Button searchEmployeeButton;
-	@FXML
-	private Button sentFeedbackButton;
-	@FXML
-	private Button signOutButton;
-	@FXML
-	private Button printButton;
-	@FXML
-	private Button deleteButton;
+	private Button backButton;
+
 
 	private ApplicationContext ctx;
 	private EmployeeDao dao;
@@ -31,12 +25,6 @@ public class InboxController{
 	private void initialize() {
 		this.ctx=  new ClassPathXmlApplicationContext("applicationContext.xml");
 		this.dao = (EmployeeDao) ctx.getBean("edao");
-		loggedAs.setText(MainApp.loggedUsername);
-	}
-	
-	@FXML
-	private void goToSentFeedback(ActionEvent event){
-		MainApp.showSentFeedback();
 	}
 	
 	@FXML
@@ -45,7 +33,8 @@ public class InboxController{
 	}
 	
 	@FXML
-	private void goToLogIn(ActionEvent event){
-		MainApp.showLogIn();
+	private void sendFeedback(ActionEvent event){
+		System.out.println("send");
 	}
+
 }

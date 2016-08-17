@@ -14,18 +14,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.erni.java.training.controller.SearchEmployeeController">
    <children>
       <SplitPane dividerPositions="0.21906354515050167" prefHeight="400.0" prefWidth="600.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="7.0" layoutY="58.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Inbox">
+                  <Button fx:id="inboxButton" layoutX="7.0" layoutY="58.0" mnemonicParsing="false" onAction="#goToInbox" prefHeight="35.0" prefWidth="114.0" text="Inbox">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="7.0" layoutY="118.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="114.0" text="Sent feedback">
+                  <Button fx:id="sentFeedbackButton" layoutX="7.0" layoutY="118.0" mnemonicParsing="false" onAction="#goToSentFeedback" prefHeight="38.0" prefWidth="114.0" text="Sent feedback">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -35,7 +35,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="7.0" layoutY="349.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Sign Out">
+                  <Button fx:id="singOutButton" layoutX="7.0" layoutY="349.0" mnemonicParsing="false" onAction="#goToLogIn" prefHeight="35.0" prefWidth="114.0" text="Sign Out">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -64,7 +64,7 @@
                      </effect>
                   </TableView>
                   <ScrollBar layoutX="443.0" layoutY="85.0" orientation="VERTICAL" prefHeight="313.0" prefWidth="14.0" />
-                  <Button layoutX="356.0" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Write feedback">
+                  <Button fx:id="writeFeedbackButton" layoutX="356.0" layoutY="27.0" mnemonicParsing="false" onAction="#goToWriteFeedback" prefHeight="25.0" prefWidth="108.0" text="Write feedback">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -75,8 +75,8 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Text layoutX="314.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logged as:" />
-                  <Label layoutX="382.0" layoutY="6.0" text="......" textFill="#25bbe1" />
+                  <Text layoutX="273.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logged as:" />
+                  <Label fx:id="loggedAs" layoutX="337.0" layoutY="6.0" prefHeight="17.0" prefWidth="122.0" textFill="#25bbe1" />
                </children>
             </AnchorPane>
         </items>
