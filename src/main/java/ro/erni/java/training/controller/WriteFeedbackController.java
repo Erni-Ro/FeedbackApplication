@@ -6,16 +6,25 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextArea;
 import ro.erni.java.training.app.MainApp;
 import ro.erni.java.training.dao.EmployeeDao;
 
 public class WriteFeedbackController {
-	
-	
+	@FXML
+	private TextArea a1;
+	@FXML
+	private TextArea a2;
+	@FXML
+	private TextArea a3;
+	@FXML
+	private CheckBox anonymous;
 	@FXML
 	private Button sendButton;
 	@FXML
 	private Button backButton;
+	
 
 
 	private ApplicationContext ctx;
