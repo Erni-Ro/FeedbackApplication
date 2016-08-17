@@ -3,6 +3,7 @@ package ro.erni.java.training.app;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,6 +15,7 @@ public class MainApp extends Application {
 
 	private Stage primaryStage;
 	private static BorderPane rootLayout;
+	public static String loggedUsername;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -46,7 +48,7 @@ public class MainApp extends Application {
 	}
 
 	/**
-	 * Shows the person HOME PAGE inside the root layout.
+	 * Shows the person overview inside the root layout.
 	 */
 	public void showEmployeeHomePage() {
 		try {
@@ -65,9 +67,23 @@ public class MainApp extends Application {
 		}
 	}
 
-	/**
-	 * Shows the person HOME PAGE inside the root layout.
-	 */
+	public static void showSearchEmployee() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			String pathToFxml = "src/main/java/ro/erni/java/training/view/SearchEmployee.fxml";
+			URL fxmlUrl = new File(pathToFxml).toURI().toURL();
+			loader.setLocation(fxmlUrl);
+			AnchorPane employeePage = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(employeePage);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 	public static void showInbox() {
 		try {
 			// Load person overview.
@@ -79,14 +95,30 @@ public class MainApp extends Application {
 
 			// Set person overview into the center of root layout.
 			rootLayout.setCenter(employeePage);
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void showSentFeedback() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			String pathToFxml = "src/main/java/ro/erni/java/training/view/SentFeedback.fxml";
+			URL fxmlUrl = new File(pathToFxml).toURI().toURL();
+			loader.setLocation(fxmlUrl);
+			AnchorPane employeePage = (AnchorPane) loader.load();
 
-		launch(args);
+			// Set person overview into the center of root layout.
+			rootLayout.setCenter(employeePage);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
+
+	// Returns the main stage.
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
 }

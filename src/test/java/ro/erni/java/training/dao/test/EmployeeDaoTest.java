@@ -1,7 +1,6 @@
 package ro.erni.java.training.dao.test;
 
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -21,12 +20,12 @@ public class EmployeeDaoTest {
 
 	@Test
 	public void testPersistencyUsernameAndPasswordMatchDatabase() {
-		assertEquals(true, dao.getEmployeeUsernamePassword("admin", "admin"));
+		assertEquals(true, dao.isEmployeeInDb("admin", "admin"));
 	}
 
 	@Test
 	public void testFalsePersistencyUsernameAndPasswordMatchDatabase() {
-		assertEquals(false, dao.getEmployeeUsernamePassword("alca", "admin"));
+		assertEquals(false, dao.isEmployeeInDb("alca", "admin"));
 	}
 
 }
